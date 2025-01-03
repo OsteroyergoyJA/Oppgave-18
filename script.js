@@ -1,9 +1,9 @@
 let myGames = [' Age of Empires', ' Hogwarts Legacy', ' The Witcher',]
 
-const topListButton = document.querySelector('#button4');
+const BottomListButton = document.querySelector('#button4');
 
 
-topListButton.addEventListener('click', function(){
+BottomListButton.addEventListener('click', function(){
     
     const input = document.querySelector('#input1');
     const game = input.value.trim();
