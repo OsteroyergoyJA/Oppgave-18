@@ -4,7 +4,7 @@ const gamePush = document.querySelector('#push');
 const gamePop = document.querySelector('#pop');
 const gameShift = document.querySelector('#shift');
 const gameUnshift = document.querySelector('#unshift');
-const emptyArray = document.querySelector('#button5');
+const emptyArray = document.querySelector('#empty');
 
 gamePush.addEventListener('click', function () {
     let inputGame = document.querySelector('#input1');
@@ -50,8 +50,15 @@ gameUnshift.addEventListener('click', function(){
 });
 
 emptyArray.addEventListener('click', function(){
-    
-})
+
+myGames = [];
+
+
+    let gamesDisplay = document.querySelector('#inputgame');
+    gamesDisplay.textContent = 'Du har tømt listen';
+
+});
+
 
 
 /*
