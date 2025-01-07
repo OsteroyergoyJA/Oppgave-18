@@ -1,20 +1,38 @@
-let myGames = [' Age of Empires', ' Hogwarts Legacy', ' The Witcher',]
+let myGames = [];
 
 const BottomListButton = document.querySelector('#button4');
+const UpperListButton = document.querySelector('#button1');
+
+
+UpperListButton.addEventListener('click', function (){
+    
+    const input = document.querySelector('#input1');
+    const game = input.value.trim();
+
+    const newArray = document.createElement('h3');
+    
+    newArray.innerText = myGames;
+    
+    document.querySelector('main').appendChild(newArray);
+
+    if (game) {myGames.unshift(game)};
+    
+});
 
 
 BottomListButton.addEventListener('click', function(){
     
     const input = document.querySelector('#input1');
     const game = input.value.trim();
-    
-    if (game) {myGames.push(game)};
-    
+
     const newArray = document.createElement('h3');
     
     newArray.innerText = myGames;
     
     document.querySelector('main').appendChild(newArray);
+    
+    if (game) {myGames.push(game)};
+    
 })
 
 console.log(myGames);
@@ -44,5 +62,42 @@ topListButton.addEventListener('click', function(){
     input.value = '';
 });*/
 
+/* Fiks av dobbeltklikk
+
+let myGames = [];
+
+const BottomListButton = document.querySelector('#button4');
+const UpperListButton = document.querySelector('#button1');
+
+// Function to render the list
+function renderList() {
+    const newArray = document.createElement('h3');
+    newArray.innerText = myGames.join(', '); // Join array values into a string
+    document.querySelector('main').appendChild(newArray);
+}
+
+UpperListButton.addEventListener('click', function() {
+    const input = document.querySelector('#input1');
+    const game = input.value.trim();
+
+    if (game) {
+        myGames.unshift(game); // Add to the beginning of the array
+    }
+    
+    renderList(); // Render the updated list
+});
+
+BottomListButton.addEventListener('click', function() {
+    const input = document.querySelector('#input1');
+    const game = input.value.trim();
+
+    if (game) {
+        myGames.push(game); // Add to the end of the array
+    }
+
+    renderList(); // Render the updated list
+});
+
+*/
 
 
