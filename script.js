@@ -1,8 +1,10 @@
 let myGames = [];
 
-const gamePush = document.querySelector('#button1');
-const gamePop = document.querySelector('#button2');
-const gameShift = document.querySelector('#button3');
+const gamePush = document.querySelector('#push');
+const gamePop = document.querySelector('#pop');
+const gameShift = document.querySelector('#shift');
+const gameUnshift = document.querySelector('#unshift');
+const emptyArray = document.querySelector('#button5');
 
 gamePush.addEventListener('click', function () {
     let inputGame = document.querySelector('#input1');
@@ -34,6 +36,21 @@ gameShift.addEventListener('click', function () {
     gamesDisplay.textContent = myGames;
 
     inputGame.value = "";
+});
+
+gameUnshift.addEventListener('click', function(){
+    let inputGame = document.querySelector('#input1');
+    myGames.unshift(inputGame.value);
+
+    let gamesDisplay = document.querySelector('#inputgame');
+    gamesDisplay.textContent = myGames;
+
+    inputGame.value = "";
+
+});
+
+emptyArray.addEventListener('click', function(){
+    
 })
 
 
