@@ -2,6 +2,7 @@ let myGames = [];
 
 const BottomListButton = document.querySelector('#button4');
 const UpperListButton = document.querySelector('#button1');
+const RemoveLast = document.querySelector('#button2');
 
 
 UpperListButton.addEventListener('click', function (){
@@ -35,7 +36,21 @@ BottomListButton.addEventListener('click', function(){
     
 })
 
-console.log(myGames);
+RemoveLast.addEventListener('click', function () {
+
+    const input = document.querySelector('#input1');
+    const game = input.value.trim();
+
+    const newArray = document.createElement('h3');
+    
+    newArray.innerText = myGames;
+    
+    document.querySelector('main').appendChild(newArray);
+    
+    if (game) {myGames.pop(game)};
+
+    
+})
 
 /*
 let myGames = ['Age of Empires', 'Hogwarts Legacy', 'The Witcher'];
