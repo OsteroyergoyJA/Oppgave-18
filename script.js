@@ -1,10 +1,43 @@
 let myGames = [];
 
-const BottomListButton = document.querySelector('#button4');
-const UpperListButton = document.querySelector('#button1');
-const RemoveLast = document.querySelector('#button2');
+const gamePush = document.querySelector('#button1');
+const gamePop = document.querySelector('#button2');
+const gameShift = document.querySelector('#button3');
+
+gamePush.addEventListener('click', function () {
+    let inputGame = document.querySelector('#input1');
+    myGames.push(inputGame.value);
+
+    let gamesDisplay = document.querySelector('#inputgame');
+    gamesDisplay.textContent = myGames;
+
+    inputGame.value = "";
+
+});
+
+gamePop.addEventListener('click', function (){
+    let inputGame = document.querySelector('#input1');
+    myGames.pop(inputGame.value);
+
+    let gamesDisplay = document.querySelector('#inputgame');
+    gamesDisplay.textContent = myGames;
+
+    inputGame.value = "";
+
+});
+
+gameShift.addEventListener('click', function () {
+    let inputGame = document.querySelector('#input1');
+    myGames.shift(inputGame.value);
+
+    let gamesDisplay = document.querySelector('#inputgame');
+    gamesDisplay.textContent = myGames;
+
+    inputGame.value = "";
+})
 
 
+/*
 UpperListButton.addEventListener('click', function (){
     
     const input = document.querySelector('#input1');
@@ -34,7 +67,7 @@ BottomListButton.addEventListener('click', function(){
     
     if (game) {myGames.push(game)};
     
-})
+});
 
 RemoveLast.addEventListener('click', function () {
 
@@ -50,7 +83,7 @@ RemoveLast.addEventListener('click', function () {
     if (game) {myGames.pop(game)};
 
     
-})
+});
 
 /*
 let myGames = ['Age of Empires', 'Hogwarts Legacy', 'The Witcher'];
